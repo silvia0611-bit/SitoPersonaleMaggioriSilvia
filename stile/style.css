@@ -1,0 +1,505 @@
+/* ===== VARIABILI COLORI PALETTE (LILLA & PRUGNA) ===== */
+:root {
+  /* Toni Pastello e Chiari */
+  --lavender-light: #e2daf1;   /* Lilla chiaro/lavanda superiore */
+  --lavender-mist: #d9e1f9;    /* Celeste lilla chiarissimo */
+  --mauve-soft: #e2cde3;       /* Malva delicato intermedio */
+  --rose-dust: #e2becb;        /* Rosa antico/polvere */
+  
+  /* Toni Scuri di Accento */
+  --plum-mid: #b4789b;         /* Prugna medio vibrante */
+  --plum-dark: #8e5d8a;        /* Prugna profondo inferiore */
+  
+  /* Sfondi e Contenitori */
+  --bg-light: #fbf9fc;         /* Sfondo generale chiarissimo con punta di lilla */
+  --white: #ffffff;            
+  
+  /* Testi (Ottimizzati per il contrasto e la leggibilità) */
+  --text-dark: #2d222d;        /* Grigio scurissimo prugna per testi principali */
+  --text-mid: #5a4b57;         /* Grigio-viola medio per descrizioni */
+
+  /* Footer */
+  --footer-bg: #1f161e;        /* Melanzana quasi nero per un distacco netto */
+  --footer-text: #dcd1db;      /* Testo chiaro per il footer */
+}
+
+/* ===== RESET E BASE ===== */
+* {
+  margin: 0;       
+  padding: 0;      
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: 'Lato', sans-serif; 
+  background-color: var(--bg-light); 
+  color: var(--text-dark); 
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  background-color: var(--plum-dark); 
+  padding: 0 40px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  height: 64px; 
+  box-shadow: 0 2px 12px rgba(142, 93, 138, 0.18); 
+  position: sticky; 
+  top: 0; 
+  z-index: 100; 
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif; 
+  color: var(--white); 
+  font-size: 1.3rem; 
+  font-weight: 700;
+  letter-spacing: 1px; 
+  text-decoration: none; 
+}
+
+.nav-links {
+  display: flex; 
+  gap: 6px; 
+  list-style: none; 
+}
+
+.nav-links a {
+  color: var(--lavender-light); 
+  text-decoration: none; 
+  font-size: 0.92rem; 
+  font-weight: 400; 
+  padding: 7px 14px; 
+  border-radius: 20px; 
+  transition: background 0.2s, color 0.2s; 
+  letter-spacing: 0.5px; 
+}
+
+.nav-links a:hover {
+  background-color: var(--plum-mid); 
+  color: var(--white); 
+}
+
+.nav-links a.active {
+  background-color: var(--rose-dust); 
+  color: var(--text-dark); 
+  font-weight: 700; 
+}
+
+/* ===== HERO / SEZIONE PRINCIPALE ===== */
+.hero {
+  flex: 1; 
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 60px 40px; 
+  min-height: calc(100vh - 64px - 110px); 
+  gap: 90px; 
+  max-width: 1400px; 
+  margin: 0 auto; 
+  width: 100%;
+}
+
+.photo-container {
+  flex: 0 0 400px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image-round {
+  width: 380px;        
+  height: 380px;       
+  border-radius: 50%;  
+  object-fit: cover;   
+  border: 6px solid var(--white); 
+  box-shadow: 0 14px 40px rgba(142, 93, 138, 0.12); 
+}
+
+/* ===== CARD BIANCA CON TESTI ===== */
+.profile-card {
+  background: var(--white); 
+  border-radius: 24px; 
+  box-shadow: 0 10px 45px rgba(142, 93, 138, 0.08); 
+  padding: 55px 60px; 
+  flex: 1; 
+  max-width: 750px; 
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start; 
+  gap: 16px; 
+  text-align: left; 
+}
+
+.profile-name {
+  font-family: 'Playfair Display', serif; 
+  font-size: 3.2rem; 
+  color: var(--text-dark); 
+  line-height: 1.1; 
+  font-weight: 700;
+}
+
+.profile-subtitle {
+  font-size: 1rem; 
+  color: var(--plum-mid); 
+  font-weight: 700; 
+  letter-spacing: 2px; 
+  text-transform: uppercase; 
+}
+
+.divider {
+  width: 85px; 
+  height: 4px; 
+  background: linear-gradient(90deg, var(--rose-dust), var(--plum-mid)); 
+  border-radius: 2px; 
+  margin: 2px 0; 
+}
+
+.description-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem; 
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.profile-desc {
+  font-size: 1.15rem; 
+  color: var(--text-mid); 
+  line-height: 1.75; 
+}
+
+.profile-badge {
+  display: inline-flex; 
+  align-items: center; 
+  gap: 8px; 
+  background: var(--lavender-light); 
+  border: 1px solid var(--mauve-soft); 
+  border-radius: 20px; 
+  padding: 8px 22px; 
+  font-size: 0.95rem; 
+  color: var(--text-dark); 
+  font-weight: 700; 
+  letter-spacing: 0.5px; 
+  margin-top: 5px;
+}
+
+/* ===== APPARATO IMPAGINAZIONE SEZIONI SECONDARIE ===== */
+.page-header {
+  text-align: center;
+  padding: 50px 20px 20px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-mid);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.divider-center {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--rose-dust), var(--plum-mid));
+  border-radius: 2px;
+  margin: 20px auto 0 auto;
+}
+
+/* Contenitori Generici Card */
+.pcto-container, .hobby-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px 80px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px; 
+}
+
+/* Strutture Card Rigide e Allineate */
+.pcto-card, .hobby-card {
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(142, 93, 138, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row; 
+  align-items: stretch;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pcto-card:hover, .hobby-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 45px rgba(142, 93, 138, 0.12);
+}
+
+.pcto-card.reverse, .hobby-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Gestione Immagini all'interno dei box */
+.pcto-image-wrapper, .hobby-image-wrapper, .pcto-map-wrapper {
+  flex: 0 0 400px; 
+  min-height: 300px;
+  background-color: var(--lavender-mist);
+  overflow: hidden;
+}
+
+.pcto-img, .hobby-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hobby-img.fit-contain {
+  object-fit: contain;
+  padding: 20px;
+}
+
+/* Allineamento e spaziatura testi interni alle Card */
+.pcto-content, .hobby-content {
+  padding: 45px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.pcto-badge, .hobby-badge {
+  display: inline-block;
+  background: var(--lavender-mist);
+  border: 1px solid var(--lavender-light);
+  border-radius: 15px;
+  padding: 4px 14px;
+  font-size: 0.85rem;
+  color: var(--plum-dark);
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.pcto-name, .hobby-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.pcto-desc, .hobby-desc {
+  font-size: 1.05rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+/* Pulsanti Link (Es. Bottone Azienda PCTO) */
+.pcto-button {
+  display: inline-block;
+  background-color: var(--plum-mid);
+  color: var(--white);
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(180, 120, 155, 0.25);
+}
+
+.pcto-button:hover {
+  background-color: var(--plum-dark);
+  transform: translateY(-1px);
+}
+
+/* ===== FOOTER SOTTILE COMPATTO ===== */
+footer {
+  background-color: var(--footer-bg); 
+  color: var(--white);
+  padding: 25px 40px 12px; 
+  width: 100%;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px; 
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column.bio h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.25rem; 
+  letter-spacing: 1px;
+  margin-bottom: 25px; 
+  color: var(--white);
+}
+
+.footer-column.bio .highlight {
+  color: var(--rose-dust); 
+}
+
+.footer-column.bio p {
+  color: var(--footer-text);
+  font-size: 0.9rem; 
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+.footer-column h4 {
+  font-size: 0.8rem; 
+  letter-spacing: 1.5px;
+  color: var(--rose-dust); 
+  margin-bottom: 25px; 
+  font-weight: 700;
+}
+
+.footer-column.contacts ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+.footer-column.contacts li {
+  color: var(--footer-text);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer-column.contacts .icon {
+  margin-right: 10px;
+  font-size: 1rem;
+  display: inline-block;
+  width: 18px;
+}
+
+.footer-column.contacts a {
+  color: var(--footer-text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-column.contacts a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 15px auto 0; 
+  padding-top: 10px; 
+  border-top: 1px solid rgba(255, 255, 255, 0.05); 
+  text-align: center;
+  font-size: 0.78rem;
+  color: rgba(220, 209, 219, 0.35);
+  letter-spacing: 0.5px;
+}
+
+/* ===== RESPONSIVE TABLET E SMARTPHONE ===== */
+@media (max-width: 1120px) {
+  .hero {
+    gap: 40px; 
+  }
+  .profile-image-round {
+    width: 300px; 
+    height: 300px;
+  }
+  .photo-container {
+    flex: 0 0 320px;
+  }
+}
+
+@media (max-width: 850px) {
+  .hero {
+    flex-direction: column; 
+    text-align: center; 
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .photo-container {
+    flex: 0 0 auto;
+  }
+
+  .profile-image-round {
+    width: 220px; 
+    height: 220px; 
+  }
+
+  .profile-card {
+    width: 100%;
+    padding: 40px 25px; 
+  }
+
+  .profile-info {
+    align-items: center; 
+    text-align: center;
+  }
+
+  .profile-name {
+    font-size: 2.5rem; 
+  }
+
+  /* Compattamento moduli card per mobile */
+  .pcto-card, .pcto-card.reverse, .hobby-card, .hobby-card.reverse {
+    flex-direction: column; 
+  }
+
+  .pcto-image-wrapper, .hobby-image-wrapper, .pcto-map-wrapper {
+    flex: 0 0 250px;
+    width: 100%;
+  }
+
+  .pcto-content, .hobby-content {
+    padding: 30px 25px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: 2.3rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 20px; 
+    text-align: center;
+  }
+
+  .footer-column.bio p {
+    margin: 0 auto;
+  }
+
+  .footer-column.contacts ul {
+    align-items: center;
+  }
+
+  .footer-column h4 {
+    margin-bottom: 15px;
+  }
+}
